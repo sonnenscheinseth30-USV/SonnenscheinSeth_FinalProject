@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dmll6pjdwkfqo"]
+
+[ext_resource type="Texture2D" uid="uid://c0cayjg1dnxje" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_d6d5g"]
+[ext_resource type="PackedScene" uid="uid://crt2e0f1xo3qj" path="res://scenes/killzone.tscn" id="2_1umsb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8l4a"]
+atlas = ExtResource("1_d6d5g")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq3te"]
+atlas = ExtResource("1_d6d5g")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukg1g"]
+atlas = ExtResource("1_d6d5g")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k10ue"]
+atlas = ExtResource("1_d6d5g")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20arr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8l4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq3te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukg1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k10ue")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj0nt"]
+size = Vector2(20, 18.197384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6d5g"]
+size = Vector2(16, 7)
+
+[node name="gatekeeper(enemy)" type="Node2D" unique_id=1606520359]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1488684969]
+texture_filter = 1
+position = Vector2(0, -17.999998)
+scale = Vector2(1.5200005, 1.5200005)
+sprite_frames = SubResource("SpriteFrames_20arr")
+
+[node name="killzone" parent="." unique_id=480565755 instance=ExtResource("2_1umsb")]
+position = Vector2(-6, -13)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=695559744]
+position = Vector2(6, 9)
+scale = Vector2(0.9588855, 0.4879605)
+shape = SubResource("RectangleShape2D_kj0nt")
+
+[node name="HitArea" type="Area2D" parent="." unique_id=1055451684]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=277549895]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_d6d5g")

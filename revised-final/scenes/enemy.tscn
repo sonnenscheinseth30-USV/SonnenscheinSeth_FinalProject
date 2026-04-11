@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bos7d1kwhg8sn"]
+
+[ext_resource type="Script" uid="uid://0uh4hrsbwop2" path="res://scripts/enemy.gd" id="1_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://dqb8u0ivaec5s" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_7p1mj"]
+[ext_resource type="PackedScene" uid="uid://crt2e0f1xo3qj" path="res://scenes/killzone.tscn" id="2_md0e3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwavj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(16, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
+size = Vector2(10, 6)
+
+[node name="enemy" type="Node2D" unique_id=644650550]
+texture_filter = 1
+script = ExtResource("1_4ra3w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=678968098]
+sprite_frames = SubResource("SpriteFrames_xwavj")
+autoplay = "default"
+
+[node name="killzone" parent="." unique_id=480565755 instance=ExtResource("2_md0e3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=724325154]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_4ra3w")
+
+[node name="HitArea" type="Area2D" parent="." unique_id=378535442]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=1510392294]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_5uy6h")
+
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
