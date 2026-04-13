@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://bolugmg8txx4y" path="res://scripts/killzone.gd" id="1_xlapc"]
 
 [node name="killzone" type="Area2D" unique_id=480565755]
+monitorable = false
 script = ExtResource("1_xlapc")
 
 [node name="Timer" type="Timer" parent="." unique_id=1928168437]
-wait_time = 0.5
+wait_time = 0.1
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
