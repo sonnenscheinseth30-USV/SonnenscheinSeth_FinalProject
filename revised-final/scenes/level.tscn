@@ -1164,3 +1164,6 @@ position = Vector2(99, 308)
 tile_map_data = PackedByteArray("AAAkAB0AAQAFAAcAAAAvABYAAQACAAcAAAAwABYAAQACAAcAAAAmAB0AAQAAAAcAAAAnAB0AAQAAAAcAAAA5ABkAAAAIAAMAAABXAAIAAAAIAAIAAAA=")
 tile_set = SubResource("TileSet_8iemx")
 collision_enabled = false
+
+[node name="enemy5" parent="." unique_id=540486536 instance=ExtResource("5_ppgk2")]
+position = Vector2(649, 464)
