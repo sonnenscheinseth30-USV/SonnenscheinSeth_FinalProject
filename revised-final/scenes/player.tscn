@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c370dysehkedx" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://42r2v5lxx23u" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="AudioStream" uid="uid://chpaees1n07m5" path="res://assets/brackeys_platformer_assets/sounds/jump.wav" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://c7ri1eexu0fdr" path="res://scripts/stomparea.gd" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -41,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(18.196186, 20)
+size = Vector2(19.670847, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
 size = Vector2(11, 1.5)
@@ -57,7 +58,7 @@ sprite_frames = SubResource("SpriteFrames_tuyoq")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1659096513]
-position = Vector2(-0.4498009, -9)
+position = Vector2(-2.9802322e-07, -9)
 scale = Vector2(0.6100398, 0.5380995)
 shape = SubResource("RectangleShape2D_dqkch")
 
@@ -65,6 +66,8 @@ shape = SubResource("RectangleShape2D_dqkch")
 stream = ExtResource("3_qhqgy")
 
 [node name="stomparea" type="Area2D" parent="." unique_id=2103898152]
+monitorable = false
+script = ExtResource("4_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stomparea" unique_id=419172860]
 position = Vector2(-0.5, -1.25)

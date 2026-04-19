@@ -55,7 +55,6 @@ sprite_frames = SubResource("SpriteFrames_20arr")
 
 [node name="killzone" parent="." unique_id=480565755 instance=ExtResource("2_1umsb")]
 position = Vector2(-6, -13)
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=695559744]
 position = Vector2(6, 9)
@@ -67,3 +66,5 @@ shape = SubResource("RectangleShape2D_kj0nt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=277549895]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_d6d5g")
+
+[connection signal="body_entered" from="HitArea" to="killzone" method="_on_hit_area_body_entered"]

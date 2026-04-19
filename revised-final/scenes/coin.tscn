@@ -100,6 +100,7 @@ animations = [{
 radius = 5.8309517
 
 [node name="coin" type="Area2D" unique_id=584129850]
+monitorable = false
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210207623]

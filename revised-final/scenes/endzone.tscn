@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://qk0t32plex4a"]
 
+[ext_resource type="Script" uid="uid://dlrb44u412u3g" path="res://scripts/endzone.gd" id="1_qgrhk"]
+
 [node name="Endzone" type="Area2D" unique_id=2137367021]
+script = ExtResource("1_qgrhk")
+
+[node name="Timer" type="Timer" parent="." unique_id=2045958848]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

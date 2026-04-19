@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
-size = Vector2(16, 6)
+size = Vector2(14, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
 size = Vector2(10, 6)
@@ -69,6 +69,10 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=1510392294]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_5uy6h")
+
+[node name="Timer" type="Timer" parent="HitArea" unique_id=2121226669]
+wait_time = 0.5
+one_shot = true
 
 [node name="enemykill" type="AudioStreamPlayer2D" parent="." unique_id=1710432449]
 stream = ExtResource("4_5uy6h")

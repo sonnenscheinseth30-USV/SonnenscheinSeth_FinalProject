@@ -1,10 +1,19 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 200.0
+const JUMP_VELOCITY = -350.0
 
 @onready var player_jump: AudioStreamPlayer2D = $PlayerJump
+
+
+	
+var stomp_force := -350
+
+func stomp_bounce():
+	velocity.y = stomp_force
+	
+	
 
 
 
@@ -27,3 +36,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	
+
+
+func _on_stomparea_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
